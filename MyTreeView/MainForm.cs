@@ -15,6 +15,7 @@ namespace MyTreeView
 {
     public partial class MainForm: Form
     {
+        
         public AutoTree treeData_;
         private CarModel carsModel_;
         public MainForm()
@@ -28,6 +29,7 @@ namespace MyTreeView
         { 
             FillTreeNodeCollection(treeData_.GetData(), MyTreeView.Nodes);
             MyTreeView.ExpandAll();
+            MyTreeView.Nodes.Clear();
         }
         static private void FillTreeNodeCollection(List<TreeNodeModel> sourceData, 
                                                   TreeNodeCollection targetData) 
@@ -88,10 +90,52 @@ namespace MyTreeView
             SaveAndLoadCsv.SaveTreeToCsv(treeData_);
 
         }
-
+        
         private void LoadCar_Click(object sender, EventArgs e)
         {
+            AutoTree loadedTree = SaveAndLoadCsv.LoadTreeFromCsv(); // Загружаем дерево
 
+            if (loadedTree != null)
+            {
+                // Очищаем TreeView
+                MyTreeView.Nodes.Clear(); // treeView1 - ваш TreeView на форме
+
+                // Получаем список корневых узлов из загруженного дерева
+                List<TreeNodeModel> rootNodes = loadedTree.GetData();
+
+                // Заполняем TreeView новыми узлами
+                foreach (TreeNodeModel rootNode in rootNodes)
+                {
+                    PopulateTreeView(MyTreeView, rootNode); // Заполняем дерево новыми данными
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Загрузка дерева из CSV отменена или произошла ошибка."); // Сообщаем об ошибке
+            }
+            MyTreeView.ExpandAll();
+        }
+        private void PopulateTreeView(System.Windows.Forms.TreeView treeView, TreeNodeModel treeNodeModel, TreeNode parentNode = null)
+        {
+            TreeNode node = new TreeNode(treeNodeModel.Name);
+
+            if (parentNode == null)
+            {
+                // Если нет родительского узла, добавляем в корневые узлы TreeView
+                treeView.Nodes.Add(node);
+            }
+            else
+            {
+                // Иначе добавляем как дочерний узел к родительскому узлу
+                parentNode.Nodes.Add(node);
+            }
+
+            // Рекурсивно вызываем для дочерних узлов
+            foreach (TreeNodeModel childNodeModel in treeNodeModel.Children)
+            {
+                PopulateTreeView(treeView, childNodeModel, node);
+            }
         }
     }
 }
