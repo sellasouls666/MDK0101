@@ -15,54 +15,19 @@ namespace MyTreeView
 {
     public partial class MainForm: Form
     {
-        private List<TreeNodeModel> treeData_;
+        public AutoTree treeData_;
         private CarModel carsModel_;
         public MainForm()
         {
             InitializeComponent();
-
-            treeData_ = new List<TreeNodeModel>();
+            treeData_ = new AutoTree();
             carsModel_ = new CarModel();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {
-            {
-                treeData_.Add(new TreeNodeModel("Машины"));
-                var carNode = treeData_[0];
-                var easierCar = carNode.AddChildNode("Легковые");
-                var sedanCar = easierCar.AddChildNode("Седаны");
-                sedanCar.AddChildNode("Lexus GS350");
-                sedanCar.AddChildNode("Audi A7");
-                sedanCar.AddChildNode("Infiniti G25");
-                var cupeCar = easierCar.AddChildNode("Купе");
-                cupeCar.AddChildNode("BMW 6-series");
-                cupeCar.AddChildNode("Kia K3");
-                cupeCar.AddChildNode("Audi A5");
-                var hatchbackCar = easierCar.AddChildNode("Хэтчбеки");
-                hatchbackCar.AddChildNode("Lexus CT200h");
-                hatchbackCar.AddChildNode("Audi A1");
-                hatchbackCar.AddChildNode("Toyota Spade");
-
-                var harderCar = carNode.AddChildNode("Грузовые");
-              
-                var scepkiHarderCar = harderCar.AddChildNode("Бортовые");
-                scepkiHarderCar.AddChildNode("Sollers Argo");
-                scepkiHarderCar.AddChildNode("Dongfeng Captain-T");
-                scepkiHarderCar.AddChildNode("JAC: N-35/25");
-
-                var solosHarderCar = harderCar.AddChildNode("Самосвалы");
-                solosHarderCar.AddChildNode("MAN TGS 6×4");
-                solosHarderCar.AddChildNode("MAN TGM III 4×4");
-                solosHarderCar.AddChildNode("ISUZU GIGA 6х4 Euro-5");
-            }
-
-            FillTreeNodeCollection(treeData_, MyTreeView.Nodes);
-
-
+        { 
+            FillTreeNodeCollection(treeData_.GetData(), MyTreeView.Nodes);
             MyTreeView.ExpandAll();
-
-           //FillTableAliases();
         }
         static private void FillTreeNodeCollection(List<TreeNodeModel> sourceData, 
                                                   TreeNodeCollection targetData) 
