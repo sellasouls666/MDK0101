@@ -68,6 +68,7 @@ namespace lr3
 
             textBox1.Text += result1;
             result1 = " ";
+
         }
     }
 }

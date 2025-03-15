@@ -18,18 +18,20 @@ namespace MyTreeView
         
         public AutoTree treeData_;
         private CarModel carsModel_;
+        private BindingList<Car> Cars = new BindingList<Car>();
         public MainForm()
         {
             InitializeComponent();
             treeData_ = new AutoTree();
             carsModel_ = new CarModel();
+            Table.DataSource = Cars;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         { 
             FillTreeNodeCollection(treeData_.GetData(), MyTreeView.Nodes);
             MyTreeView.ExpandAll();
-            MyTreeView.Nodes.Clear();
+           
         }
         static private void FillTreeNodeCollection(List<TreeNodeModel> sourceData, 
                                                   TreeNodeCollection targetData) 
@@ -75,7 +77,7 @@ namespace MyTreeView
 
                 if (selectedCar != null)
                 {
-                    PopulateDataGridView(selectedCar);
+                    Cars.Add(selectedCar);
                 }
                 else
                 {

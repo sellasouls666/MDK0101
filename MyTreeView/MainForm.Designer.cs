@@ -30,13 +30,6 @@
         {
             this.MyTreeView = new System.Windows.Forms.TreeView();
             this.Table = new System.Windows.Forms.DataGridView();
-            this.CarName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Engine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Power = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Transmissionbox = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Drive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveCar = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,53 +49,10 @@
             // Table
             // 
             this.Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CarName,
-            this.Engine,
-            this.Power,
-            this.Transmissionbox,
-            this.Drive,
-            this.Color,
-            this.Mileage});
             this.Table.Location = new System.Drawing.Point(307, 90);
             this.Table.Name = "Table";
             this.Table.Size = new System.Drawing.Size(717, 348);
             this.Table.TabIndex = 1;
-            // 
-            // CarName
-            // 
-            this.CarName.HeaderText = "Наименование";
-            this.CarName.Name = "CarName";
-            // 
-            // Engine
-            // 
-            this.Engine.HeaderText = "Двигатель";
-            this.Engine.Name = "Engine";
-            // 
-            // Power
-            // 
-            this.Power.HeaderText = "Мощность";
-            this.Power.Name = "Power";
-            // 
-            // Transmissionbox
-            // 
-            this.Transmissionbox.HeaderText = "Коробка передач";
-            this.Transmissionbox.Name = "Transmissionbox";
-            // 
-            // Drive
-            // 
-            this.Drive.HeaderText = "Привод";
-            this.Drive.Name = "Drive";
-            // 
-            // Color
-            // 
-            this.Color.HeaderText = "Цвет";
-            this.Color.Name = "Color";
-            // 
-            // Mileage
-            // 
-            this.Mileage.HeaderText = "Пробег";
-            this.Mileage.Name = "Mileage";
             // 
             // menuStrip1
             // 
@@ -126,14 +76,14 @@
             // SaveCar
             // 
             this.SaveCar.Name = "SaveCar";
-            this.SaveCar.Size = new System.Drawing.Size(180, 22);
+            this.SaveCar.Size = new System.Drawing.Size(133, 22);
             this.SaveCar.Text = "Сохранить";
             this.SaveCar.Click += new System.EventHandler(this.Save_Click);
             // 
             // LoadCar
             // 
             this.LoadCar.Name = "LoadCar";
-            this.LoadCar.Size = new System.Drawing.Size(180, 22);
+            this.LoadCar.Size = new System.Drawing.Size(133, 22);
             this.LoadCar.Text = "Загрузить";
             this.LoadCar.Click += new System.EventHandler(this.LoadCar_Click);
             // 
@@ -161,13 +111,6 @@
 
         private System.Windows.Forms.TreeView MyTreeView;
         private System.Windows.Forms.DataGridView Table;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CarName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Engine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Power;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Transmissionbox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Drive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mileage;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SaveCar;
