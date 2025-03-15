@@ -32,5 +32,11 @@ namespace BindingListExample
             });
             gameTable.DataSource = Games;
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            var EditForm = new EditGame();
+            EditForm.Show();
+        }
     }
 }
