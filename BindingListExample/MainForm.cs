@@ -12,9 +12,25 @@ namespace BindingListExample
 {
     public partial class MainForm: Form
     {
+        private BindingList<Game> Games = new BindingList<Game>();
         public MainForm()
         {
             InitializeComponent();
+            Games.Add(new Game
+            {
+                Name = "Witcher 3",
+                Genre = "RPG",
+                Price = 1999,
+                Release = new DateTime(2015, 10, 10)
+            });
+            Games.Add(new Game
+            {
+                Name = "Grand Theft Auto V",
+                Genre = "Action",
+                Price = 1999,
+                Release = new DateTime(2013, 08, 14)
+            });
+            gameTable.DataSource = Games;
         }
     }
 }
