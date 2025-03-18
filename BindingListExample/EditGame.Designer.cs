@@ -94,12 +94,18 @@
             // boxPrice
             // 
             this.boxPrice.Location = new System.Drawing.Point(101, 97);
+            this.boxPrice.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.boxPrice.Name = "boxPrice";
             this.boxPrice.Size = new System.Drawing.Size(200, 20);
             this.boxPrice.TabIndex = 8;
             // 
             // boxRelease
             // 
+            this.boxRelease.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.boxRelease.Location = new System.Drawing.Point(101, 133);
             this.boxRelease.Name = "boxRelease";
             this.boxRelease.Size = new System.Drawing.Size(200, 20);
@@ -113,6 +119,7 @@
             this.buttonOk.TabIndex = 10;
             this.buttonOk.Text = "Ok";
             this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // buttonCancel
             // 
@@ -122,6 +129,7 @@
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // EditGame
             // 
@@ -148,16 +156,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox changedName;
-        private System.Windows.Forms.TextBox changedGenre;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelRelease;
-        private System.Windows.Forms.NumericUpDown boxPrice;
-        private System.Windows.Forms.DateTimePicker boxRelease;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Button buttonCancel;
+        public System.Windows.Forms.TextBox changedName;
+        public System.Windows.Forms.TextBox changedGenre;
+        public System.Windows.Forms.NumericUpDown boxPrice;
+        public System.Windows.Forms.DateTimePicker boxRelease;
     }
 }

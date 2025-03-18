@@ -39,7 +39,10 @@
             // 
             this.gameTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gameTable.Location = new System.Drawing.Point(12, 12);
+            this.gameTable.MultiSelect = false;
             this.gameTable.Name = "gameTable";
+            this.gameTable.ReadOnly = true;
+            this.gameTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gameTable.Size = new System.Drawing.Size(480, 150);
             this.gameTable.TabIndex = 0;
             // 
@@ -61,6 +64,7 @@
             this.buttonDelete.TabIndex = 2;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonChange
             // 
@@ -70,6 +74,7 @@
             this.buttonChange.TabIndex = 3;
             this.buttonChange.Text = "Редактировать";
             this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // MainForm
             // 
