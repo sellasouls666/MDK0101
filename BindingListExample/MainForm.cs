@@ -114,10 +114,6 @@ namespace BindingListExample
                     Games.ResetItem(selectedIndex);
                 }
             }
-            else
-            {
-                MessageBox.Show("Пожалуйста, выберите строку для редактирования.");
-            }
         }
 
         private void PrepareEditForm(EditGame editForm, Game game)
