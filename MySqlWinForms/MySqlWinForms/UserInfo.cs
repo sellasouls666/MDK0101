@@ -14,5 +14,10 @@ namespace MySqlWinForms
         public string Password { get; set; }
         public string Email { get; set; }
         public DateTime Birhday { get; set; }
+
+        public UserInfo (string login)
+        {
+            Login = login;
+        }
     }
 }

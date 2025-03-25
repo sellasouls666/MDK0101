@@ -12,9 +12,15 @@ namespace MySqlWinForms
 {
     public partial class MainForm: Form
     {
+        SQLUserReader sqlreader = new SQLUserReader();
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            UsersTable.DataSource = sqlreader.ReadUsers();
         }
     }
 }
