@@ -31,6 +31,7 @@
             this.UsersTable = new System.Windows.Forms.DataGridView();
             this.deleteButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,12 +63,24 @@
             this.addButton.TabIndex = 2;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(247, 252);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(100, 23);
+            this.editButton.TabIndex = 3;
+            this.editButton.Text = "Редактировать";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 294);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.UsersTable);
@@ -84,6 +97,7 @@
         private System.Windows.Forms.DataGridView UsersTable;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button editButton;
     }
 }
 

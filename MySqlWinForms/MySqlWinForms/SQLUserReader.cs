@@ -114,5 +114,74 @@ namespace MySqlWinForms
                 }
             }
         }
+
+        public bool UpdateUser(UserInfo user, string oldLogin)  // oldLogin для поиска
+        {
+            MySqlConnection conn = null;
+            try
+            {
+                conn = new MySqlConnection(MyConnectionString);
+                conn.Open();
+
+                string query = "UPDATE users SET login = @newLogin, name = @name, surname = @surname, birthday = @birthday, " +
+                               "password = @password, email = @email WHERE login = @oldLogin";  // Используем oldLogin в WHERE
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("@newLogin", user.Login); // Новый логин
+                command.Parameters.AddWithValue("@oldLogin", oldLogin);   // Старый логин для WHERE
+                command.Parameters.AddWithValue("@name", user.Name);
+                command.Parameters.AddWithValue("@surname", user.Surname);
+                command.Parameters.AddWithValue("@birthday", user.Birhday);
+                command.Parameters.AddWithValue("@password", user.Password);
+                command.Parameters.AddWithValue("@email", user.Email);
+
+                int rowsAffected = command.ExecuteNonQuery();
+                conn.Close();
+
+                return rowsAffected > 0;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null && conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public bool IsLoginUnique(string login)  // Метод для проверки уникальности логина
+        {
+            MySqlConnection conn = null;
+            try
+            {
+                conn = new MySqlConnection(MyConnectionString);
+                conn.Open();
+
+                string query = "SELECT COUNT(*) FROM users WHERE login = @login";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("@login", login);
+
+                long count = (long)command.ExecuteScalar();
+                conn.Close();
+
+                return count == 0; // Возвращает true, если логин не существует
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false; // В случае ошибки считаем, что логин не уникален
+            }
+            finally
+            {
+                if (conn != null && conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

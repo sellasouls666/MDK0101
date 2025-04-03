@@ -36,10 +36,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.surnameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.OKbutton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -112,33 +112,33 @@
             this.nameTextBox.Size = new System.Drawing.Size(199, 20);
             this.nameTextBox.TabIndex = 7;
             // 
-            // textBox1
+            // surnameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 8;
+            this.surnameTextBox.Location = new System.Drawing.Point(184, 72);
+            this.surnameTextBox.Name = "surnameTextBox";
+            this.surnameTextBox.Size = new System.Drawing.Size(199, 20);
+            this.surnameTextBox.TabIndex = 8;
             // 
-            // textBox2
+            // passwordTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 20);
-            this.textBox2.TabIndex = 9;
+            this.passwordTextBox.Location = new System.Drawing.Point(184, 101);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(199, 20);
+            this.passwordTextBox.TabIndex = 9;
             // 
-            // textBox3
+            // emailTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(184, 127);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 20);
-            this.textBox3.TabIndex = 10;
+            this.emailTextBox.Location = new System.Drawing.Point(184, 127);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(199, 20);
+            this.emailTextBox.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // datePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(183, 160);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.datePicker.Location = new System.Drawing.Point(183, 160);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(200, 20);
+            this.datePicker.TabIndex = 11;
             // 
             // OKbutton
             // 
@@ -148,6 +148,7 @@
             this.OKbutton.TabIndex = 12;
             this.OKbutton.Text = "ОК";
             this.OKbutton.UseVisualStyleBackColor = true;
+            this.OKbutton.Click += new System.EventHandler(this.OKbutton_Click);
             // 
             // cancelButton
             // 
@@ -157,6 +158,7 @@
             this.cancelButton.TabIndex = 13;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // AddForm
             // 
@@ -165,10 +167,10 @@
             this.ClientSize = new System.Drawing.Size(455, 260);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.OKbutton);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.datePicker);
+            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.surnameTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.label6);
@@ -194,10 +196,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox surnameTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Button OKbutton;
         private System.Windows.Forms.Button cancelButton;
     }

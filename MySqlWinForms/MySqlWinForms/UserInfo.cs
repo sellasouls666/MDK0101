@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySqlWinForms
 {
-    class UserInfo
+    public class UserInfo
     {
         public string Login { get; set; }
         public string Name { get; set; }
