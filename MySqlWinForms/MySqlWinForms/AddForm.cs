@@ -21,6 +21,7 @@ namespace MySqlWinForms
             isEditMode = false;
         }
 
+
         public AddForm(UserInfo user)
         {
             InitializeComponent();
@@ -36,6 +37,32 @@ namespace MySqlWinForms
 
         private void OKbutton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(loginTextBox.Text))
+            {
+                MessageBox.Show("Поле 'Login' обязательно для заполнения.");
+                return; // Прерываем выполнение, если поле пустое
+            }
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
+            {
+                MessageBox.Show("Поле 'Имя' обязательно для заполнения.");
+                return; // Прерываем выполнение, если поле пустое
+            }
+            if (string.IsNullOrWhiteSpace(surnameTextBox.Text))
+            {
+                MessageBox.Show("Поле 'Фамилия' обязательно для заполнения.");
+                return; // Прерываем выполнение, если поле пустое
+            }
+            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
+            {
+                MessageBox.Show("Поле 'Пароль' обязательно для заполнения.");
+                return; // Прерываем выполнение, если поле пустое
+            }
+            if (string.IsNullOrWhiteSpace(emailTextBox.Text))
+            {
+                MessageBox.Show("Поле 'Email' обязательно для заполнения.");
+                return; // Прерываем выполнение, если поле пустое
+            }
+
             NewUser = new UserInfo(loginTextBox.Text); 
             NewUser.Name = nameTextBox.Text;
             NewUser.Surname = surnameTextBox.Text;
